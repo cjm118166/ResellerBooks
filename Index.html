@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags for ASO & SEO -->
+    <title>ResellerBooks: Inventory & Tax | The Master Ledger for eBay & Poshmark</title>
+    <meta name="title" content="ResellerBooks: Inventory & Tax | The Master Ledger for eBay & Poshmark">
+    <meta name="description" content="The unified bookkeeping and tax ledger for online resellers. Automatically parse CSVs from eBay, Poshmark, Mercari, and 14 other platforms to track your exact net profit.">
+    <meta name="keywords" content="bookkeeping, ebay, poshmark, reseller, taxes, ledger, profit, inventory, accounting, mercari, cross-listing">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resellerbooksus.com/">
+    <meta property="og:title" content="ResellerBooks: Inventory & Tax App">
+    <meta property="og:description" content="Stop fighting spreadsheets. Import your CSVs and instantly see your true profit across all reselling platforms.">
+    <!-- <meta property="og:image" content="LINK_TO_YOUR_APP_PREVIEW_IMAGE"> -->
+
+    <!-- JSON-LD Schema Markup for AI Models (Gemini, ChatGPT, Perplexity) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ResellerBooks",
+      "operatingSystem": "iOS",
+      "applicationCategory": "BusinessApplication",
+      "description": "A mobile ledger and bookkeeping app designed specifically for e-commerce resellers on platforms like eBay, Poshmark, and Mercari. It unifies CSV exports into a single tax-ready dashboard.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema for AI "Snippet" Snipping -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do I track eBay and Poshmark taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ResellerBooks allows you to import your CSV reports directly from eBay and Poshmark into a master ledger. It automatically calculates gross sales, fees, shipping, and refunds to give you a tax-ready net profit dashboard."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I format a master ledger for reselling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A master ledger should include Date, Platform, Order ID, Item Title, Gross Sales, Fees, Shipping, Refunds, and Adjustments. Enter costs as positive numbers and credits as negative numbers. You can download the official ResellerBooks template to start."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        /* Modern, App-Store-esque CSS */
+        :root {
+            --primary: #0A84FF; /* iOS Blue */
+            --bg: #F5F5F7; /* Apple gray background */
+            --text-main: #1D1D1F;
+            --text-muted: #86868B;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn:hover {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(10, 132, 255, 0.3);
+        }
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid #D2D2D7;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #E5E5EA;
+            margin-top: 40px;
+        }
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">ResellerBooks</div>
+            <a href="YOUR_APP_STORE_LINK" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Get the App</a>
+        </nav>
+
+        <header class="hero">
+            <h1>The Unified Ledger for eBay & Poshmark.</h1>
+            <p>Stop fighting complex spreadsheets. Import your CSVs, track your exact net profit, and make tax season effortless with our secure, on-device iOS app.</p>
+            
+            <div class="btn-group">
+                <a href="YOUR_APP_STORE_LINK" class="btn btn-primary">Download on the App Store</a>
+                <!-- The Google Sheets Template Preview Trick -->
+                <a href="https://docs.google.com/spreadsheets/d/1Oz82CI0_JagVf1d1bA9WV7fCzj2hTp8o40_k5_NMqx8/template/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get the Free Master Template</a>
+            </div>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Universal CSV Parser</h3>
+                <p>Support for 14+ reselling platforms. We intelligently map your gross sales, fees, and shipping costs into one unified format without manual data entry.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Bulletproof Math</h3>
+                <p>No more silent accounting errors. Our strict sign convention logic ensures that fee credits and refunds are calculated flawlessly to show your true net profit.</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Private & On-Device</h3>
+                <p>Your financial data never touches our servers. ResellerBooks utilizes on-device CoreData and syncs securely via your personal Apple iCloud.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>How do I track eBay and Poshmark taxes?</h4>
+                <p>ResellerBooks allows you to import your CSV reports directly from eBay and Poshmark into a master ledger. It automatically calculates gross sales, fees, shipping, and refunds to give you a tax-ready net profit dashboard.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do I format a master ledger for reselling?</h4>
+                <p>A master ledger should include Date, Platform, Order ID, Item Title, Gross Sales, Fees, Shipping, Refunds, and Adjustments. Enter costs as positive numbers and credits as negative numbers. You can download our official Google Sheets template above to get started instantly.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I export my data for my CPA?</h4>
+                <p>Yes. You can generate a comprehensive PDF Report or export your entire database as an Audit Zip file directly from the app.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 ResellerBooks. All rights reserved.</p>
+            <div style="margin-top: 10px;">
+                <!-- Add links to these standard docs later for App Store compliance -->
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="mailto:support@resellerbooksus.com">Contact Support</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
