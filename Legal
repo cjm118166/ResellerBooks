@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResellerBooks | Privacy, Terms & Support</title>
+    <style>
+        /* iOS Color Palette & Base Variables */
+        :root {
+            --ios-blue: #007AFF;
+            --bg-color: #F2F2F7;
+            --text-main: #1C1C1E;
+            --text-secondary: #8E8E93;
+            --border-color: #E5E5EA;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Base iOS Typography and Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sticky Blurred Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 16px 0;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--ios-blue);
+        }
+
+        /* Content Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin: 0 0 8px 0;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            letter-spacing: -0.4px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            color: #1C1C1E;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: #3A3A3C;
+        }
+
+        p {
+            color: #3A3A3C;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 24px;
+            color: #3A3A3C;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--ios-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Support Section Specifics */
+        .support-box {
+            background: var(--bg-color);
+            border-radius: 18px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .support-box p {
+            margin-bottom: 32px;
+            color: var(--text-main);
+        }
+
+        /* Prominent iOS Button */
+        .button {
+            display: inline-block;
+            background-color: var(--ios-blue);
+            color: #ffffff;
+            text-decoration: none !important;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        .button:active {
+            transform: scale(0.97);
+        }
+
+        /* Back to Top Functionality */
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 60px auto 20px;
+            color: var(--ios-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <nav>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#support">Support</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>ResellerBooks</h1>
+            <p class="subtitle">Legal & Support Hub</p>
+        </header>
+
+        <section id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date:</strong> April 24, 2026</p>
+
+            <h3>Overview</h3>
+            <p>This Privacy Policy applies to the ResellerBooks application ("Application"). ResellerBooks is a record-keeping tool for resellers. The Application is designed to help you organize and review business records that you enter, import, or choose to sync.</p>
+
+            <h3>Information We Collect and Use</h3>
+            <p>ResellerBooks is designed so that your records remain on your device or in your personal iCloud storage unless you choose to export them or send them elsewhere.</p>
+            <p>The Application may process the following information that you provide or import:</p>
+            <ul>
+                <li>Sales and order data</li>
+                <li>Expense records</li>
+                <li>Mileage and trip logs</li>
+                <li>Inventory and other bookkeeping details</li>
+                <li>Home office and similar bookkeeping settings</li>
+                <li>Photos you attach to receipts, odometer readings, or mileage logs</li>
+                <li>Data imported from third-party platforms, CSV files, or API connections</li>
+            </ul>
+            <p>We use this information only to provide the Application’s record-keeping features. We do not sell your data.</p>
+
+            <h3>Local Storage and iCloud Sync</h3>
+            <p>The Application stores data on your device using Apple’s local storage frameworks and may optionally sync data through your private iCloud/CloudKit container if you enable iCloud on your Apple device.</p>
+            <p>If iCloud sync is available, your data may be transferred through Apple’s iCloud services so that it can be available on your other devices signed into the same Apple Account. If iCloud is unavailable or disabled, your data remains local to the device.</p>
+            <p>The Service Provider does not operate a separate cloud database for your records.</p>
+
+            <h3>Photos and On-Device Processing</h3>
+            <p>The Application may use on-device processing to extract text from receipt photos, odometer photos, or similar images you add to the Application.</p>
+            <p>When you capture or import photos:</p>
+            <ul>
+                <li>The photo is stored locally and may also sync through your private iCloud storage if enabled</li>
+                <li>Text extraction is performed to support record-keeping features</li>
+                <li>Photos and extracted text are not intended to be sent for human review unless you choose to share or export them</li>
+            </ul>
+            <p>The Application requests camera access so you can scan receipts or capture mileage-related images, and photo library access so you can attach existing images to records.</p>
+
+            <h3>Location and Mileage Features</h3>
+            <p>The Application may use address lookup and route calculation services to help estimate mileage or support trip logging.</p>
+            <p>If you use these features:</p>
+            <ul>
+                <li>Address strings you enter may be sent to Apple services for geocoding or route estimation</li>
+                <li>The Application does not use background GPS tracking</li>
+                <li>The Application does not continuously monitor your location</li>
+            </ul>
+
+            <h3>Third-Party Integrations</h3>
+            <p>The Application may connect to third-party services only when you choose to use those features.</p>
+            
+            <h4>eBay Integration</h4>
+            <ul>
+                <li>If you connect your eBay account, the Application uses OAuth 2.0 authentication</li>
+                <li>Your eBay password is not collected by the Application</li>
+                <li>A secure authorization flow is used to obtain access to your eBay data</li>
+                <li>The Application may use a secure intermediary service only to exchange the authorization code for access tokens</li>
+                <li>Access tokens may be stored in the device Keychain for sign-in purposes</li>
+                <li>The Application may retrieve sales and fee data from eBay when you connect your account</li>
+            </ul>
+
+            <h4>Apple Services</h4>
+            <ul>
+                <li>iCloud/CloudKit may be used for optional sync and backup</li>
+                <li>StoreKit may be used for subscriptions and billing</li>
+                <li>MapKit may be used for address lookup and route estimation</li>
+            </ul>
+
+            <h3>Subscriptions and Billing</h3>
+            <p>If you purchase ResellerBooks Pro, billing is handled by Apple through the App Store. The Service Provider does not receive, store, or process your payment card information.</p>
+
+            <h3>Export Features</h3>
+            <p>The Application may generate export files that include your record-keeping data and related photos. Exports are created temporarily on your device and are shared only through the method you choose, such as the iOS share sheet, email, or cloud storage.</p>
+
+            <h3>Advertising and Analytics</h3>
+            <p>The Application does not currently use third-party advertising networks, analytics providers, or behavioral tracking tools.</p>
+
+            <h3>Data Retention and Deletion</h3>
+            <p>You control your records.</p>
+            <p>You may:</p>
+            <ul>
+                <li>Delete individual entries inside the Application</li>
+                <li>Disconnect third-party integrations such as eBay</li>
+                <li>Delete all Application data using the Settings option provided in the app</li>
+            </ul>
+            <p>Deleting the Application from your device removes local data, but it may not remove copies stored in your private iCloud account. To remove iCloud-stored data, you must also delete it from your iCloud storage settings.</p>
+            <p>Deleted data may not be recoverable.</p>
+
+            <h3>Children’s Privacy</h3>
+            <p>The Application is intended for adult users. It is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+            <h3>Security</h3>
+            <p>We use reasonable safeguards designed to protect your information, including:</p>
+            <ul>
+                <li>Apple device and storage protections</li>
+                <li>Keychain storage for sensitive credentials</li>
+                <li>Encrypted network connections where supported by the relevant service</li>
+            </ul>
+            <p>No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
+
+            <h3>No Tax Advice</h3>
+            <p>ResellerBooks is a record-keeping application only. It does not provide tax, legal, accounting, or financial advice. Any tax-related figures or references in the Application are informational only and should be reviewed by your CPA or another qualified professional before filing.</p>
+
+            <h3>Changes to This Privacy Policy</h3>
+            <p>We may update this Privacy Policy from time to time. When we do, we will update the Effective Date above. Your continued use of the Application after an update means you accept the revised policy.</p>
+
+            <h3>Contact Us</h3>
+            <p>If you have questions about privacy, contact: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
+        </section>
+
+        <section id="terms">
+            <h2>Terms and Conditions</h2>
+            <p><strong>Effective Date:</strong> April 24, 2026</p>
+
+            <h3>Agreement to Terms</h3>
+            <p>By downloading, accessing, or using ResellerBooks ("Application"), you agree to these Terms and Conditions. If you do not agree, do not use the Application.</p>
+
+            <h3>Service Description</h3>
+            <p>ResellerBooks is a record-keeping application for resellers. It is designed to help you organize, import, store, review, and export business records.</p>
+            <p>The Application may include features such as:</p>
+            <ul>
+                <li>Sales tracking</li>
+                <li>CSV import</li>
+                <li>eBay sync</li>
+                <li>Expense tracking</li>
+                <li>Receipt scanning</li>
+                <li>Mileage and trip logging</li>
+                <li>Odometer photo capture</li>
+                <li>Dashboard summaries</li>
+                <li>Reports and exports</li>
+            </ul>
+            <p>Some features may be available only in ResellerBooks Pro.</p>
+
+            <h3>Subscription Terms</h3>
+            <p>ResellerBooks Pro may be offered as an optional auto-renewable subscription.</p>
+            <p>If you subscribe:</p>
+            <ul>
+                <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+                <li>The subscription renews automatically unless canceled before the end of the current billing period</li>
+                <li>You can manage or cancel the subscription through Apple’s subscription settings</li>
+                <li>Billing, renewals, refunds, and payment processing are handled by Apple, not the Service Provider</li>
+            </ul>
+            <p>Pricing and availability may change at any time, subject to Apple’s rules and applicable law.</p>
+
+            <h3>No Professional Advice</h3>
+            <p>ResellerBooks is a bookkeeping and record-keeping tool only.</p>
+            <p>The Service Provider is not a Certified Public Accountant, tax preparer, lawyer, broker, or financial advisor. The Application does not provide tax advice, legal advice, accounting advice, or financial advice.</p>
+            <p>Any calculations, summaries, projections, estimates, or reference amounts shown in the Application are informational only. They are not guarantees of tax treatment, eligibility, compliance, or final amounts for any filing or report.</p>
+            <p>You are solely responsible for:</p>
+            <ul>
+                <li>Reviewing your own records</li>
+                <li>Verifying imported and entered information</li>
+                <li>Confirming tax treatment with your CPA or other qualified professional</li>
+                <li>Filing accurate returns and maintaining required records</li>
+            </ul>
+
+            <h3>Imported and Entered Data</h3>
+            <p>The Application may rely on:</p>
+            <ul>
+                <li>Data you manually enter</li>
+                <li>Data imported from CSV files</li>
+                <li>Data retrieved from third-party APIs</li>
+                <li>Data extracted by OCR from images</li>
+            </ul>
+            <p>You acknowledge that such data may be incomplete, delayed, inaccurate, or inconsistent. The Service Provider is not responsible for errors in third-party data, user-entered data, or OCR output.</p>
+            <p>You are responsible for reviewing all imported information before relying on it.</p>
+
+            <h3>eBay Integration</h3>
+            <p>If you choose to connect an eBay account:</p>
+            <ul>
+                <li>The integration is optional</li>
+                <li>eBay credentials are not shared with the Application</li>
+                <li>OAuth may be used for authentication</li>
+                <li>The Application may retrieve sales and fee data from eBay based on the permissions you grant</li>
+                <li>eBay controls its own services, APIs, data formats, and availability</li>
+            </ul>
+            <p>The Service Provider is not affiliated with eBay Inc. and is not responsible for eBay’s policies, outages, or data changes.</p>
+
+            <h3>Data Storage and iCloud Sync</h3>
+            <p>The Application stores data locally on your device and may sync data through your private iCloud/CloudKit container if you enable iCloud.</p>
+            <p>If iCloud is enabled:</p>
+            <ul>
+                <li>Your data may be available across your Apple devices signed into the same Apple Account</li>
+                <li>Sync depends on Apple services and your iCloud account state</li>
+                <li>Sync may be delayed or unavailable due to network, device, or account issues</li>
+            </ul>
+            <p>If you disable iCloud or if it is unavailable, your data may remain only on the local device.</p>
+
+            <h3>Export Features</h3>
+            <p>The Application may generate export files, including ZIP archives and PDFs, for your convenience.</p>
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>Exports are generated from user-entered, imported, or computed data</li>
+                <li>Exports are not official tax documents</li>
+                <li>You are responsible for verifying exports against original records before relying on them</li>
+                <li>Export files may be temporarily stored on your device until you choose where to share them</li>
+            </ul>
+
+            <h3>Usage Requirements</h3>
+            <p>You agree that:</p>
+            <ul>
+                <li>You are responsible for the accuracy of all information you enter into the Application</li>
+                <li>Certain features require internet access and may incur data charges from your carrier</li>
+                <li>You are responsible for maintaining the security of your device and account</li>
+                <li>Jailbroken or otherwise modified devices may affect security, reliability, or functionality</li>
+            </ul>
+
+            <h3>Intellectual Property</h3>
+            <p>All rights, title, and interest in and to the Application, including its design, text, graphics, code, and trademarks, belong to the Service Provider or its licensors. You are granted a limited, non-exclusive, non-transferable, revocable license to use the Application for personal or business bookkeeping purposes in accordance with these Terms.</p>
+
+            <h3>Limitation of Liability</h3>
+            <p>To the maximum extent permitted by law, the Service Provider is not liable for any direct, indirect, incidental, special, consequential, exemplary, or punitive damages, including without limitation:</p>
+            <ul>
+                <li>Lost profits</li>
+                <li>Lost data</li>
+                <li>Missed deductions</li>
+                <li>Tax penalties</li>
+                <li>Audit issues</li>
+                <li>Business interruption</li>
+                <li>Device failure</li>
+                <li>iCloud sync failures</li>
+                <li>Errors in imported, entered, or OCR-derived data</li>
+                <li>Problems caused by third-party services, including Apple, eBay, or network providers</li>
+            </ul>
+            <p>This limitation applies whether the claim is based on contract, tort, negligence, strict liability, or any other legal theory, even if the Service Provider has been advised of the possibility of such damages.</p>
+
+            <h3>Disclaimers</h3>
+            <p>The Application is provided on an "as is" and "as available" basis.</p>
+            <p>To the maximum extent permitted by law, the Service Provider disclaims all warranties, express or implied, including implied warranties of merchantability, fitness for a particular purpose, non-infringement, and uninterrupted availability.</p>
+            <p>No oral or written information from the Service Provider creates any warranty or guarantee.</p>
+
+            <h3>Termination and Changes</h3>
+            <p>The Service Provider may update, suspend, restrict, or discontinue the Application or any feature at any time, with or without notice, subject to applicable law.</p>
+            <p>The Service Provider may also update these Terms from time to time. If the Terms are updated, the Effective Date above will change. Continued use of the Application after the update means you accept the revised Terms.</p>
+
+            <h3>Third-Party Services</h3>
+            <p>The Application may rely on third-party services, including Apple services and eBay. Those services are governed by their own terms and policies, and the Service Provider is not responsible for their acts, omissions, outages, pricing, or policy changes.</p>
+
+            <h3>Refunds</h3>
+            <p>All subscription billing, refunds, and payment disputes are handled by Apple under Apple’s App Store rules and policies.</p>
+
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by the laws applicable in the jurisdiction where the Service Provider operates, without regard to conflict-of-law rules, except where local law requires otherwise.</p>
+
+            <h3>Severability</h3>
+            <p>If any provision of these Terms is found unenforceable, the remaining provisions will remain in effect.</p>
+
+            <h3>Contact Us</h3>
+            <p>If you have questions or suggestions, contact: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
+        </section>
+
+        <section id="support">
+            <h2>Support</h2>
+            <div class="support-box">
+                <p>Welcome to the official support hub for ResellerBooks users. Whether you have a question about a feature, need help troubleshooting an issue, or want to report a bug, we are here to help ensure your business tracking runs smoothly.</p>
+                <a href="mailto:resellerbookssupport@gmail.com" class="button">Contact Support</a>
+            </div>
+        </section>
+
+        <a href="#top" class="back-to-top">↑ Back to Top</a>
+    </div>
+
+</body>
+</html>
