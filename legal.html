@@ -14,12 +14,11 @@
             --border-color: #E5E5EA;
         }
 
-        /* Smooth scrolling for anchor links */
+        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Base iOS Typography and Styling */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -58,7 +57,6 @@
             color: var(--ios-blue);
         }
 
-        /* Content Layout */
         .container {
             max-width: 760px;
             margin: 0 auto;
@@ -104,39 +102,17 @@
             color: #1C1C1E;
         }
 
-        h4 {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin: 24px 0 12px 0;
+        p, li {
             color: #3A3A3C;
-        }
-
-        p {
-            color: #3A3A3C;
-            margin-bottom: 20px;
             font-size: 16px;
+            margin-bottom: 12px;
         }
 
         ul {
             margin-bottom: 20px;
             padding-left: 24px;
-            color: #3A3A3C;
         }
 
-        li {
-            margin-bottom: 8px;
-        }
-
-        a {
-            color: var(--ios-blue);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Support Section Specifics */
         .support-box {
             background: var(--bg-color);
             border-radius: 18px;
@@ -145,33 +121,22 @@
             margin-top: 32px;
         }
 
-        .support-box p {
-            margin-bottom: 32px;
-            color: var(--text-main);
-        }
-
-        /* Prominent iOS Button */
         .button {
             display: inline-block;
             background-color: var(--ios-blue);
             color: #ffffff;
-            text-decoration: none !important;
+            text-decoration: none;
             padding: 14px 32px;
             border-radius: 12px;
             font-size: 17px;
             font-weight: 600;
-            transition: opacity 0.2s ease, transform 0.1s ease;
+            transition: opacity 0.2s ease;
         }
 
         .button:hover {
             opacity: 0.85;
         }
 
-        .button:active {
-            transform: scale(0.97);
-        }
-
-        /* Back to Top Functionality */
         .back-to-top {
             display: block;
             text-align: center;
@@ -179,7 +144,6 @@
             color: var(--ios-blue);
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
         }
     </style>
 </head>
@@ -202,35 +166,39 @@
             <p><strong>Effective Date:</strong> May 10, 2026</p>
 
             <h3>1. Overview</h3>
-            <p>This Privacy Policy applies to the <strong>ResellerBooks</strong> application ("Application"), owned and operated by <strong>Mazza Financial Systems LLC</strong>. ResellerBooks is a record-keeping utility designed specifically for e-commerce resellers to organize business records, expenses, and mileage.</p>
+            <p>This Privacy Policy applies to the ResellerBooks mobile application ("Application"), owned and operated by <strong>Mazza Financial Systems LLC</strong> ("we," "us," or "our"). ResellerBooks is a record-keeping utility designed for e-commerce resellers to organize sales, expenses, and mileage for bookkeeping purposes.</p>
 
-            <h3>2. Information Collection and Use</h3>
-            <p>ResellerBooks is built with a "privacy-first" architecture. Most data remains local to your device or within your personal iCloud storage.</p>
+            <h3>2. Privacy-First Architecture</h3>
+            <p>ResellerBooks is built so that your financial data stays on your device and, if enabled, syncs privately through your personal iCloud account. We do not operate application servers that store your data. We do not collect analytics, crash reports, or usage telemetry of any kind.</p>
+
+            <h3>3. Information We Process</h3>
             <ul>
-                <li><strong>Bookkeeping Data:</strong> We process sales data, expense records, and mileage logs ("Audit-Proof Mileage Log") to provide core features.</li>
-                <li><strong>On-Device Processing:</strong> Images of receipts or odometers are processed locally using Apple's on-device OCR. We do not send these images to external servers for processing.</li>
-                <li><strong>Imported Data:</strong> We process data from CSV files and API connections (e.g., eBay) only to display and calculate records within the Application.</li>
+                <li><strong>Bookkeeping Data:</strong> The Application processes sales transactions, expense records, and mileage trip logs stored via Apple's SwiftData framework and synced via CloudKit.</li>
+                <li><strong>Platform Preferences:</strong> Marketplaces you select during onboarding (e.g., eBay, Poshmark, Mercari) are stored locally to tailor the interface.</li>
+                <li><strong>Photos:</strong> Receipt and odometer photos are stored on-device and in your private iCloud. They are never uploaded to our servers.</li>
+                <li><strong>On-Device OCR:</strong> Text extraction from photos is performed entirely on your device using Apple's Vision framework.</li>
+                <li><strong>Cross-Device Settings:</strong> Non-sensitive preferences (timezone, display mode) are synced via Apple's iCloud Key-Value Store.</li>
             </ul>
 
-            <h3>3. Advertising (Free Version Only)</h3>
-            <p>The free version of the Application uses <strong>Google AdMob</strong> to serve advertisements.</p>
+            <h3>4. Third-Party Services</h3>
             <ul>
-                <li><strong>IDFA Tracking:</strong> AdMob may use your Apple Identifier for Advertisers (IDFA) to provide personalized ads. The Application will request your permission via the App Tracking Transparency (ATT) prompt.</li>
-                <li><strong>Pro Tier:</strong> Users who upgrade to <strong>ResellerBooks Pro</strong> will have advertisements disabled, and the AdMob SDK will cease active tracking for advertising purposes.</li>
+                <li><strong>eBay Integration:</strong> Uses OAuth 2.0. A transient Vercel-hosted bridge facilitates the code exchange but does not store credentials or transaction data.</li>
+                <li><strong>Google AdMob (Free Tier Only):</strong> Used to display advertisements. May use your IDFA for personalization following an ATT prompt. AdMob is disabled for Pro users.</li>
+                <li><strong>Apple Services:</strong> Includes iCloud/CloudKit for sync, StoreKit 2 for billing, and MapKit/CoreLocation for distance and geocoding (no background GPS tracking).</li>
+                <li><strong>CSV Import:</strong> All parsing of exported files (from eBay, Amazon, etc.) happens entirely on your device.</li>
             </ul>
 
-            <h3>4. Third-Party Integrations and Services</h3>
-            <ul>
-                <li><strong>eBay Integration:</strong> We use OAuth 2.0 for secure data syncing. Your credentials are never shared with or stored by the Application.</li>
-                <li><strong>Apple Services:</strong> We utilize <strong>iCloud/CloudKit</strong> for data syncing and <strong>StoreKit 2</strong> for managing Pro subscriptions and billing.</li>
-                <li><strong>Location Services:</strong> Address lookups for mileage tracking utilize <strong>Apple MapKit</strong>. No background GPS tracking is performed.</li>
-            </ul>
+            <h3>5. Information We Do Not Collect</h3>
+            <p>We do not collect analytics, telemetry, or continuous location data. We do not store your data on our servers or sell your information to third parties.</p>
 
-            <h3>5. Data Retention and Deletion</h3>
-            <p>You control your data. You may delete individual entries or use the "Delete All Data" feature in settings. To remove data synced to iCloud, you must manage your storage via your Apple Account settings.</p>
+            <h3>6. Data Export</h3>
+            <p>You may export all data (records and photos) as a ZIP archive containing CSV files. This is generated locally on your device.</p>
 
-            <h3>6. Contact Us</h3>
-            <p>If you have questions about privacy, contact: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
+            <h3>7. Data Retention and Deletion</h3>
+            <p>You control your data. Records can be deleted individually or via "Delete All Data" in Settings. iCloud data must be managed via your Apple Account settings.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>Questions? Contact us at: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
         </section>
 
         <section id="terms">
@@ -238,39 +206,38 @@
             <p><strong>Effective Date:</strong> May 10, 2026</p>
 
             <h3>1. Agreement to Terms</h3>
-            <p>By downloading, accessing, or using ResellerBooks, you agree to be bound by these Terms and Conditions. These terms constitute a legally binding agreement between you and <strong>Mazza Financial Systems LLC</strong>.</p>
+            <p>By using ResellerBooks, you agree to be bound by these Terms and Conditions. These constitute a binding agreement with <strong>Mazza Financial Systems LLC</strong>.</p>
 
-            <h3>2. Service Description and Tiers</h3>
-            <p>ResellerBooks provides bookkeeping tools including the <strong>Universal CSV Parser</strong> and <strong>Profit Pulse Dashboard</strong>.</p>
+            <h3>2. Service Description</h3>
+            <p>ResellerBooks provides bookkeeping tools for resellers, including sales tracking, expense capture, and IRS-compliant mileage logging.</p>
             <ul>
-                <li><strong>Free Tier:</strong> Provides basic ledger features supported by third-party advertisements.</li>
-                <li><strong>ResellerBooks Pro:</strong> An auto-renewable subscription that removes advertisements and unlocks advanced reporting features.</li>
+                <li><strong>Free Tier:</strong> Core features supported by third-party advertisements.</li>
+                <li><strong>ResellerBooks Pro:</strong> Auto-renewable subscription ($2.99/mo or $24.99/yr) that removes ads and unlocks mileage tracking, eBay API sync, and advanced reporting. Includes a one-week free trial for eligible users.</li>
             </ul>
 
             <h3>3. Subscriptions and Payments</h3>
-            <ul>
-                <li>All billing and payment processing are handled exclusively by <strong>Apple via the App Store</strong>.</li>
-                <li>Subscriptions renew automatically unless canceled at least 24 hours prior to the end of the current period.</li>
-                <li>Mazza Financial Systems LLC does not have the authority to issue refunds; all refund requests must be directed to Apple Support.</li>
-            </ul>
+            <p>All billing is handled by Apple. Subscriptions renew automatically unless canceled at least 24 hours before the end of the period. Mazza Financial Systems LLC cannot issue refunds; all requests must go to Apple Support.</p>
 
-            <h3>4. No Professional Advice Disclaimer</h3>
-            <p><strong>ResellerBooks is a record-keeping tool only.</strong> Mazza Financial Systems LLC is not a Certified Public Accountant (CPA) or tax professional. The Application does not provide tax, legal, or financial advice. All calculations, including estimated "Net Cash Profit" and mileage deductions, should be verified by a qualified professional before filing any tax returns.</p>
+            <h3>4. No Professional Advice</h3>
+            <p><strong>ResellerBooks is a record-keeping tool only.</strong> Mazza Financial Systems LLC is not a CPA or tax advisor. All figures are informational and must be verified by a professional before use in tax filings.</p>
 
-            <h3>5. Limitation of Liability</h3>
-            <p>To the maximum extent permitted by law, Mazza Financial Systems LLC shall not be liable for any financial losses, tax penalties, or data loss resulting from the use of the Application or inaccuracies in data imported from third-party platforms (eBay, Poshmark, Mercari, etc.).</p>
+            <h3>5. Third-Party Data and Mileage Accuracy</h3>
+            <p>The original marketplace (eBay, Poshmark, etc.) is the authoritative system of record. Mileage estimates via Apple Maps may not reflect actual odometer readings; users are responsible for verifying accuracy for IRS compliance.</p>
 
-            <h3>6. Governing Law</h3>
-            <p>These terms are governed by the laws of the <strong>State of Florida</strong>, without regard to its conflict of law provisions.</p>
+            <h3>6. Limitation of Liability</h3>
+            <p>Mazza Financial Systems LLC is not liable for financial losses, tax penalties, or data loss resulting from the use of the Application or reliance on third-party data estimates.</p>
 
-            <h3>7. Contact Us</h3>
-            <p>If you have questions regarding these terms, please contact: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
+            <h3>7. Governing Law</h3>
+            <p>These Terms are governed by the laws of the <strong>State of Florida</strong>.</p>
+
+            <h3>8. Contact Us</h3>
+            <p>Questions? Contact us at: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
         </section>
 
         <section id="support">
             <h2>Support</h2>
             <div class="support-box">
-                <p>Welcome to the official support hub for ResellerBooks users. Whether you have a question about a feature, need help troubleshooting an issue, or want to report a bug, we are here to help ensure your business tracking runs smoothly.</p>
+                <p>Need help with a feature or found a bug? We are here to ensure your business tracking runs smoothly.</p>
                 <a href="mailto:resellerbookssupport@gmail.com" class="button">Contact Support</a>
             </div>
         </section>
