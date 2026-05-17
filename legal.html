@@ -5,245 +5,480 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ResellerBooks | Privacy, Terms & Support</title>
     <style>
-        /* iOS Color Palette & Base Variables */
         :root {
-            --ios-blue: #007AFF;
-            --bg-color: #F2F2F7;
-            --text-main: #1C1C1E;
-            --text-secondary: #8E8E93;
-            --border-color: #E5E5EA;
+            --bg: #f4f1ea;
+            --card: rgba(255, 255, 255, 0.82);
+            --ink: #171717;
+            --muted: #5f5a52;
+            --line: rgba(23, 23, 23, 0.10);
+            --accent: #0f766e;
+            --accent-2: #b45309;
+            --shadow: 0 24px 60px rgba(24, 24, 27, 0.10);
+            --radius-xl: 28px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --max-width: 920px;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: var(--text-main);
-            line-height: 1.6;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 26%),
+                radial-gradient(circle at top right, rgba(180, 83, 9, 0.10), transparent 22%),
+                linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
-        /* Sticky Blurred Navigation */
-        nav {
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(23, 23, 23, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(23, 23, 23, 0.02) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 86%);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            position: relative;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 28px 20px 64px;
+        }
+
+        .nav {
             position: sticky;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            z-index: 1000;
+            top: 14px;
+            z-index: 20;
             display: flex;
             justify-content: center;
-            padding: 16px 0;
+            gap: 12px;
+            margin: 0 auto 26px;
+            padding: 10px;
+            width: fit-content;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.70);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
         }
 
-        nav a {
-            margin: 0 20px;
+        .nav a {
+            padding: 10px 16px;
+            border-radius: 999px;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .nav a:hover {
+            background: rgba(15, 118, 110, 0.08);
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--ios-blue);
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
-
-        header {
+        .hero {
+            padding: 42px 18px 26px;
             text-align: center;
-            padding: 40px 0 60px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            padding: 8px 14px;
+            border: 1px solid rgba(15, 118, 110, 0.18);
+            border-radius: 999px;
+            background: rgba(15, 118, 110, 0.06);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         h1 {
-            font-size: 2.8em;
-            font-weight: 700;
-            letter-spacing: -0.8px;
-            margin: 0 0 8px 0;
+            margin: 0;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
         }
 
         .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.2em;
-            font-weight: 400;
-            margin: 0;
+            max-width: 680px;
+            margin: 16px auto 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .meta-pill {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 18px;
         }
 
         section {
-            margin-bottom: 80px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: var(--card);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            animation: fadeUp 420ms ease-out both;
+        }
+
+        .section-inner {
+            padding: 28px 24px;
         }
 
         h2 {
-            font-size: 1.8em;
-            font-weight: 600;
-            letter-spacing: -0.4px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
+            margin: 0 0 16px;
+            font-size: 1.6rem;
+            letter-spacing: -0.03em;
         }
 
         h3 {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin: 32px 0 16px 0;
-            color: #1C1C1E;
+            margin: 24px 0 10px;
+            font-size: 1.02rem;
         }
 
         p, li {
-            color: #3A3A3C;
-            font-size: 16px;
-            margin-bottom: 12px;
+            margin: 0 0 12px;
+            color: #2d2a26;
+            font-size: 1rem;
         }
 
         ul {
-            margin-bottom: 20px;
-            padding-left: 24px;
+            margin: 0 0 14px;
+            padding-left: 22px;
+        }
+
+        .callout {
+            margin: 18px 0 0;
+            padding: 16px 18px;
+            border-left: 4px solid var(--accent);
+            border-radius: 14px;
+            background: rgba(15, 118, 110, 0.07);
         }
 
         .support-box {
-            background: var(--bg-color);
-            border-radius: 18px;
-            padding: 48px 32px;
-            text-align: center;
-            margin-top: 32px;
+            display: grid;
+            gap: 16px;
+            justify-items: start;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.70));
+            border: 1px solid rgba(23, 23, 23, 0.08);
         }
 
         .button {
-            display: inline-block;
-            background-color: var(--ios-blue);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-size: 17px;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 18px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), #115e59);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 12px 28px rgba(15, 118, 110, 0.18);
         }
 
         .button:hover {
-            opacity: 0.85;
+            text-decoration: none;
+            filter: brightness(1.03);
         }
 
         .back-to-top {
             display: block;
-            text-align: center;
-            margin: 60px auto 20px;
-            color: var(--ios-blue);
+            margin: 26px auto 0;
+            width: fit-content;
+            padding: 10px 14px;
+            border-radius: 999px;
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .back-to-top:hover {
+            background: rgba(23, 23, 23, 0.05);
             text-decoration: none;
-            font-weight: 500;
+        }
+
+        .small {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 760px) {
+            .section-inner {
+                padding: 34px 34px 30px;
+            }
+
+            .grid {
+                gap: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            section {
+                animation: none;
+            }
         }
     </style>
 </head>
 <body id="top">
+    <div class="page">
+        <nav class="nav" aria-label="Section navigation">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#support">Support</a>
+        </nav>
 
-    <nav>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#support">Support</a>
-    </nav>
-
-    <div class="container">
-        <header>
-            <h1>ResellerBooks</h1>
-            <p class="subtitle">Legal & Support Hub</p>
+        <header class="hero">
+            <div class="eyebrow">ResellerBooks Legal</div>
+            <h1>Privacy, Terms & Support</h1>
+            <p class="subtitle">
+                This page covers the current ResellerBooks experience, including bookkeeping, OCR receipt capture,
+                iCloud sync, the Pro subscription, sponsored ad surfaces, and the Toolkit section with external links.
+            </p>
+            <div class="meta-row">
+                <span class="meta-pill">Effective May 17, 2026</span>
+                <span class="meta-pill">Current App Release</span>
+                <span class="meta-pill">Support: resellerbookssupport@gmail.com</span>
+            </div>
         </header>
 
-        <section id="privacy">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date:</strong> May 10, 2026</p>
+        <main class="grid">
+            <section id="privacy">
+                <div class="section-inner">
+                    <h2>Privacy Policy</h2>
+                    <p><strong>Effective Date:</strong> May 17, 2026</p>
 
-            <h3>1. Overview</h3>
-            <p>This Privacy Policy applies to the ResellerBooks mobile application ("Application"), owned and operated by <strong>Mazza Financial Systems LLC</strong> ("we," "us," or "our"). ResellerBooks is a record-keeping utility designed for e-commerce resellers to organize sales, expenses, and mileage for bookkeeping purposes.</p>
+                    <h3>1. Overview</h3>
+                    <p>
+                        This Privacy Policy applies to the ResellerBooks application operated by
+                        <strong>Mazza Financial Systems LLC</strong> ("we," "us," or "our"). ResellerBooks is a bookkeeping
+                        and organization tool for resellers that helps you track sales, expenses, mileage, receipts,
+                        and related tax records.
+                    </p>
 
-            <h3>2. Privacy-First Architecture</h3>
-            <p>ResellerBooks is built so that your financial data stays on your device and, if enabled, syncs privately through your personal iCloud account. We do not operate application servers that store your data. We do not collect analytics, crash reports, or usage telemetry of any kind.</p>
+                    <h3>2. Data Handling Model</h3>
+                    <p>
+                        ResellerBooks is designed to keep your data under your control. App data is stored on your device
+                        and may sync through your private iCloud / CloudKit container when available. We do not operate a
+                        general-purpose backend that stores your bookkeeping records, photos, or mileage logs.
+                    </p>
+                    <p>
+                        When CloudKit is unavailable, the app may temporarily operate in local-only mode until iCloud access
+                        is restored. Local-only storage is an operational fallback, not a separate data product.
+                    </p>
 
-            <h3>3. Information We Process</h3>
-            <ul>
-                <li><strong>Bookkeeping Data:</strong> The Application processes sales transactions, expense records, and mileage trip logs stored via Apple's SwiftData framework and synced via CloudKit.</li>
-                <li><strong>Platform Preferences:</strong> Marketplaces you select during onboarding (e.g., eBay, Poshmark, Mercari) are stored locally to tailor the interface.</li>
-                <li><strong>Photos:</strong> Receipt and odometer photos are stored on-device and in your private iCloud. They are never uploaded to our servers.</li>
-                <li><strong>On-Device OCR:</strong> Text extraction from photos is performed entirely on your device using Apple's Vision framework.</li>
-                <li><strong>Cross-Device Settings:</strong> Non-sensitive preferences (timezone, display mode) are synced via Apple's iCloud Key-Value Store.</li>
-            </ul>
+                    <h3>3. Information The App Processes</h3>
+                    <ul>
+                        <li><strong>Sales and expense data:</strong> Transaction details, cost records, and summaries you enter or import.</li>
+                        <li><strong>Mileage data:</strong> Trip logs, odometer entries, and deduction calculations used by the mileage tools.</li>
+                        <li><strong>Receipt and photo data:</strong> Images captured in-app or selected from your library for receipts, mileage verification, or related records.</li>
+                        <li><strong>OCR text:</strong> On-device text extraction from photos to help populate fields and reduce manual entry.</li>
+                        <li><strong>Settings and preferences:</strong> Non-sensitive preferences such as display choices, sync settings, and bookkeeping defaults.</li>
+                        <li><strong>Subscription state:</strong> Pro entitlement and billing status handled through Apple’s StoreKit.</li>
+                        <li><strong>Ad-related state:</strong> The app includes sponsored ad surfaces and related presentation logic in free or eligible builds.</li>
+                    </ul>
 
-            <h3>4. Third-Party Services</h3>
-            <ul>
-                <li><strong>eBay Integration:</strong> Uses OAuth 2.0. A transient Vercel-hosted bridge facilitates the code exchange but does not store credentials or transaction data.</li>
-                <li><strong>Google AdMob (Free Tier Only):</strong> Used to display advertisements. May use your IDFA for personalization following an ATT prompt. AdMob is disabled for Pro users.</li>
-                <li><strong>Apple Services:</strong> Includes iCloud/CloudKit for sync, StoreKit 2 for billing, and MapKit/CoreLocation for distance and geocoding (no background GPS tracking).</li>
-                <li><strong>CSV Import:</strong> All parsing of exported files (from eBay, Amazon, etc.) happens entirely on your device.</li>
-            </ul>
+                    <h3>4. Storage And Sync</h3>
+                    <p>
+                        Bookkeeping records, mileage logs, and receipt photos may be stored locally and synchronized with your
+                        private iCloud account when CloudKit is available. Some preference data may also sync through Apple
+                        services so your configuration stays consistent across devices.
+                    </p>
+                    <p>
+                        You can export or delete your data through app settings. Depending on your Apple account and iCloud status,
+                        some data may remain in your private Apple storage until removed through the appropriate Apple or app controls.
+                    </p>
 
-            <h3>5. Information We Do Not Collect</h3>
-            <p>We do not collect analytics, telemetry, or continuous location data. We do not store your data on our servers or sell your information to third parties.</p>
+                    <h3>5. OCR And Camera Use</h3>
+                    <p>
+                        The app uses device capabilities to capture photos of receipts and odometer readings and to process those
+                        images with on-device OCR. OCR results are used to help you enter information more quickly and are not a
+                        substitute for reviewing the underlying image or source document.
+                    </p>
 
-            <h3>6. Data Export</h3>
-            <p>You may export all data (records and photos) as a ZIP archive containing CSV files. This is generated locally on your device.</p>
+                    <h3>6. Third-Party Services</h3>
+                    <ul>
+                        <li><strong>Apple:</strong> Used for iCloud / CloudKit, StoreKit subscriptions, photos, camera access, and platform features.</li>
+                        <li><strong>Google AdMob and related ad tooling:</strong> Used for sponsored ad surfaces and ad delivery where enabled. Ad behavior may vary by build, region, and entitlement state.</li>
+                        <li><strong>External toolkit links:</strong> The Toolkit section may open third-party websites such as TurboTax, Vendoo, Amazon, or other merchant links. Those sites have their own terms and privacy policies.</li>
+                    </ul>
 
-            <h3>7. Data Retention and Deletion</h3>
-            <p>You control your data. Records can be deleted individually or via "Delete All Data" in Settings. iCloud data must be managed via your Apple Account settings.</p>
+                    <h3>7. Information We Do Not Collect</h3>
+                    <p>
+                        We do not claim to collect continuous location data, sell personal information, or run analytics that
+                        track your bookkeeping activity across unrelated services. If third-party services are used, their own
+                        policies may apply to data they collect independently of ResellerBooks.
+                    </p>
 
-            <h3>8. Contact Us</h3>
-            <p>Questions? Contact us at: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
-        </section>
+                    <h3>8. Data Export And Deletion</h3>
+                    <p>
+                        You may export your records through the app’s export tools. You may also delete app data from within
+                        ResellerBooks. If data is stored in your private iCloud container, Apple account settings and iCloud
+                        storage controls may also be relevant.
+                    </p>
 
-        <section id="terms">
-            <h2>Terms and Conditions</h2>
-            <p><strong>Effective Date:</strong> May 10, 2026</p>
+                    <h3>9. Contact</h3>
+                    <p>Questions about this policy can be sent to <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a>.</p>
+                </div>
+            </section>
 
-            <h3>1. Agreement to Terms</h3>
-            <p>By using ResellerBooks, you agree to be bound by these Terms and Conditions. These constitute a binding agreement with <strong>Mazza Financial Systems LLC</strong>.</p>
+            <section id="terms">
+                <div class="section-inner">
+                    <h2>Terms And Conditions</h2>
+                    <p><strong>Effective Date:</strong> May 17, 2026</p>
 
-            <h3>2. Service Description</h3>
-            <p>ResellerBooks provides bookkeeping tools for resellers, including sales tracking, expense capture, and IRS-compliant mileage logging.</p>
-            <ul>
-                <li><strong>Free Tier:</strong> Core features supported by third-party advertisements.</li>
-                <li><strong>ResellerBooks Pro:</strong> Auto-renewable subscription ($2.99/mo or $24.99/yr) that removes ads and unlocks mileage tracking, eBay API sync, and advanced reporting. Includes a one-week free trial for eligible users.</li>
-            </ul>
+                    <h3>1. Agreement To Terms</h3>
+                    <p>
+                        By downloading, installing, or using ResellerBooks, you agree to these Terms and Conditions and
+                        agree to comply with applicable laws and Apple platform rules. These Terms are a binding agreement
+                        between you and <strong>Mazza Financial Systems LLC</strong>.
+                    </p>
 
-            <h3>3. Subscriptions and Payments</h3>
-            <p>All billing is handled by Apple. Subscriptions renew automatically unless canceled at least 24 hours before the end of the period. Mazza Financial Systems LLC cannot issue refunds; all requests must go to Apple Support.</p>
+                    <h3>2. What The App Does</h3>
+                    <p>
+                        ResellerBooks provides bookkeeping and operational tools for resellers, including sales tracking,
+                        expense capture, mileage logging, OCR-assisted receipt entry, cloud sync, data export, and reporting.
+                        The app may also include a Toolkit section with outbound links to external third-party services.
+                    </p>
 
-            <h3>4. No Professional Advice</h3>
-            <p><strong>ResellerBooks is a record-keeping tool only.</strong> Mazza Financial Systems LLC is not a CPA or tax advisor. All figures are informational and must be verified by a professional before use in tax filings.</p>
+                    <h3>3. Free And Pro Experience</h3>
+                    <ul>
+                        <li><strong>Free tier:</strong> Includes core bookkeeping functionality and may include sponsored or hidden ad surfaces as part of the app experience.</li>
+                        <li><strong>ResellerBooks Pro:</strong> An auto-renewable subscription that unlocks Pro features, including the mileage tracker, trip tools, odometer verification workflows, and an ad-free experience.</li>
+                        <li><strong>Trial eligibility:</strong> Some users may be eligible for a limited free trial as presented by Apple’s subscription flow.</li>
+                    </ul>
 
-            <h3>5. Third-Party Data and Mileage Accuracy</h3>
-            <p>The original marketplace (eBay, Poshmark, etc.) is the authoritative system of record. Mileage estimates via Apple Maps may not reflect actual odometer readings; users are responsible for verifying accuracy for IRS compliance.</p>
+                    <h3>4. Billing And Renewals</h3>
+                    <p>
+                        All purchases, renewals, cancellations, and refunds are handled by Apple. Subscriptions renew automatically
+                        unless canceled in your Apple subscription settings before the renewal window. We do not control Apple’s
+                        billing policies or refund decisions.
+                    </p>
 
-            <h3>6. Limitation of Liability</h3>
-            <p>Mazza Financial Systems LLC is not liable for financial losses, tax penalties, or data loss resulting from the use of the Application or reliance on third-party data estimates.</p>
+                    <h3>5. No Professional Advice</h3>
+                    <p>
+                        ResellerBooks is a record-keeping and organization tool only. It does not provide legal, tax, accounting,
+                        or financial advice. You are responsible for confirming the accuracy of any records, calculations, exports,
+                        or estimates before relying on them for taxes or business decisions.
+                    </p>
 
-            <h3>7. Governing Law</h3>
-            <p>These Terms are governed by the laws of the <strong>State of Florida</strong>.</p>
+                    <h3>6. Mileage, OCR, And Third-Party Data</h3>
+                    <p>
+                        Mileage estimates, OCR extraction, and imported marketplace data are convenience features. They can be
+                        incomplete, approximate, or incorrect. You are responsible for reviewing entries against receipts, odometer
+                        readings, platform statements, and your own records.
+                    </p>
 
-            <h3>8. Contact Us</h3>
-            <p>Questions? Contact us at: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a></p>
-        </section>
+                    <h3>7. External Links</h3>
+                    <p>
+                        The Toolkit section and other app surfaces may open third-party websites or services. Those destinations are
+                        not controlled by us. We are not responsible for third-party content, pricing, availability, delivery,
+                        security, or policies.
+                    </p>
 
-        <section id="support">
-            <h2>Support</h2>
-            <div class="support-box">
-                <p>Need help with a feature or found a bug? We are here to ensure your business tracking runs smoothly.</p>
-                <a href="mailto:resellerbookssupport@gmail.com" class="button">Contact Support</a>
-            </div>
-        </section>
+                    <h3>8. Availability And Changes</h3>
+                    <p>
+                        We may change app features, ad surfaces, subscription offerings, Toolkit links, or sync behavior over time.
+                        Features may vary by device, region, Apple account, or app release. Continued use of the app after changes
+                        means you accept the updated version of the app and any updated Terms posted here.
+                    </p>
 
-        <a href="#top" class="back-to-top">↑ Back to Top</a>
+                    <h3>9. Limitation Of Liability</h3>
+                    <p>
+                        To the maximum extent permitted by law, Mazza Financial Systems LLC is not liable for losses, penalties,
+                        missed filings, data corruption, service outages, or problems arising from the use of the app, third-party
+                        services, ads, or toolkit links.
+                    </p>
+
+                    <h3>10. Governing Law</h3>
+                    <p>These Terms are governed by the laws of the State of Florida, without regard to conflict-of-law principles.</p>
+
+                    <h3>11. Contact</h3>
+                    <p>Questions about these Terms can be sent to <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a>.</p>
+                </div>
+            </section>
+
+            <section id="support">
+                <div class="section-inner">
+                    <h2>Support</h2>
+                    <div class="support-box">
+                        <p>
+                            For help with setup, subscription status, iCloud sync, OCR behavior, exports, or data deletion,
+                            contact support directly.
+                        </p>
+                        <a class="button" href="mailto:resellerbookssupport@gmail.com">Contact Support</a>
+                        <p class="small">
+                            Support email: <a href="mailto:resellerbookssupport@gmail.com">resellerbookssupport@gmail.com</a>
+                        </p>
+                    </div>
+                    <p class="callout">
+                        If you need help with a purchase, cancellation, or refund, Apple handles App Store billing and subscription
+                        management.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <a href="#top" class="back-to-top">Back to Top</a>
     </div>
-
 </body>
 </html>
