@@ -554,6 +554,95 @@ h1 {
     color: var(--muted);
 }
 
+/* -------------------- Privacy at a glance -------------------- */
+
+.privacy-glance {
+    margin-top: 28px;
+    padding: 28px;
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.05);
+}
+
+.privacy-glance-head {
+    max-width: 720px;
+}
+
+.privacy-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(15, 118, 110, 0.10);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.privacy-glance-head h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    letter-spacing: -0.04em;
+}
+
+.privacy-glance-head p {
+    margin: 0 0 22px;
+    color: var(--muted);
+}
+
+.privacy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.privacy-grid li {
+    position: relative;
+    padding: 16px 18px 16px 48px;
+    border-radius: var(--radius-md);
+    background: rgba(252, 250, 246, 0.85);
+    border: 1px solid var(--line);
+}
+
+.privacy-grid li::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #5ce5b9, #0f766e 70%);
+    box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.14);
+}
+
+.privacy-grid strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.privacy-grid span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 820px) {
+    .privacy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+}
+
 /* -------------------- Pro section -------------------- */
 
 .pro-panel {
