@@ -7,35 +7,132 @@
     <meta name="title" content="ResellerBooks 1.0.0 | Bookkeeping, Mileage, OCR & iCloud Sync">
     <meta name="description" content="ResellerBooks is the bookkeeping app for resellers. Track sales, expenses, mileage, and receipts across eBay, Poshmark, Mercari, and more with private iCloud sync, OCR, exports, and a Pro tier that removes ads.">
     <meta name="keywords" content="ResellerBooks, reseller bookkeeping, mileage tracker, OCR receipts, iCloud sync, eBay, Poshmark, Mercari, Depop, Whatnot, sales tracking, expense tracking">
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="author" content="Mazza Financial Systems LLC">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="canonical" href="https://cjm118166.github.io/ResellerBooks/">
 
     <link rel="icon" type="image/png" href="assets/app-icon.png">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
 
+    <link rel="preload" as="image" href="screenshots/dashboard.png" fetchpriority="high">
+    <link rel="preload" as="style" href="styles.css">
+
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ResellerBooks">
     <meta property="og:url" content="https://cjm118166.github.io/ResellerBooks/">
     <meta property="og:title" content="ResellerBooks 1.0.0 | Bookkeeping for Resellers">
     <meta property="og:description" content="Track sales, expenses, mileage, receipts, and exports in one private iPhone app built for resellers.">
-    <meta property="og:image" content="assets/app-icon.png">
+    <meta property="og:image" content="https://cjm118166.github.io/ResellerBooks/assets/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ResellerBooks — your books, mileage, and receipts in one app.">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ResellerBooks 1.0.0 | Bookkeeping for Resellers">
     <meta name="twitter:description" content="Private bookkeeping, mileage logging, OCR receipt capture, and iCloud sync for resellers.">
-    <meta name="twitter:image" content="assets/app-icon.png">
+    <meta name="twitter:image" content="https://cjm118166.github.io/ResellerBooks/assets/og-card.png">
+    <meta name="twitter:image:alt" content="ResellerBooks — your books, mileage, and receipts in one app.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://cjm118166.github.io/ResellerBooks/#organization",
+      "name": "Mazza Financial Systems LLC",
+      "alternateName": "ResellerBooks",
+      "url": "https://cjm118166.github.io/ResellerBooks/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cjm118166.github.io/ResellerBooks/assets/app-icon.png",
+        "width": 120,
+        "height": 120
+      },
+      "description": "Maker of ResellerBooks, the private iOS bookkeeping app for resellers."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://cjm118166.github.io/ResellerBooks/#website",
+      "url": "https://cjm118166.github.io/ResellerBooks/",
+      "name": "ResellerBooks",
+      "description": "Private bookkeeping, mileage, OCR & iCloud sync for resellers.",
+      "publisher": { "@id": "https://cjm118166.github.io/ResellerBooks/#organization" },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cjm118166.github.io/ResellerBooks/" },
+        { "@type": "ListItem", "position": 2, "name": "Legal", "item": "https://cjm118166.github.io/ResellerBooks/legal.html" }
+      ]
+    }
+    </script>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
+      "@id": "https://cjm118166.github.io/ResellerBooks/#app",
       "name": "ResellerBooks",
-      "operatingSystem": "iOS",
+      "alternateName": "ResellerBooks for iOS",
       "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Bookkeeping",
+      "operatingSystem": "iOS 17+",
       "softwareVersion": "1.0.0",
-      "description": "A private bookkeeping app for resellers that tracks sales, expenses, mileage, and receipts with OCR, iCloud sync, and export tools.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "datePublished": "2026-05-18",
+      "dateModified": "2026-05-18",
+      "inLanguage": "en-US",
+      "url": "https://cjm118166.github.io/ResellerBooks/",
+      "image": "https://cjm118166.github.io/ResellerBooks/assets/og-card.png",
+      "description": "A private bookkeeping app for resellers that tracks sales, expenses, mileage, and receipts with OCR, iCloud sync, and export tools across eBay, Poshmark, Mercari, Depop, Whatnot, Etsy, Facebook Marketplace, Amazon, and Walmart.",
+      "publisher": { "@id": "https://cjm118166.github.io/ResellerBooks/#organization" },
+      "featureList": [
+        "Sales tracking by marketplace (eBay, Poshmark, Mercari, Depop, Whatnot, Etsy, Facebook Marketplace, Amazon, Walmart)",
+        "Inventory tracking grouped by receipt",
+        "Supplies, software, equipment and miscellaneous expense categories",
+        "On-device OCR for receipts and odometer photos",
+        "Mileage tracking with MapKit distance calculation",
+        "Odometer photo verification for audit trails",
+        "IRS standard-rate mileage deduction calculation",
+        "Private iCloud / CloudKit sync with local-only fallback",
+        "CSV exports for sales, expenses, mileage, and full app data",
+        "Reseller insights: monthly cash flow, take-home margin, top platform",
+        "Pro tier: full mileage workflow and ad-free experience"
+      ],
+      "screenshot": [
+        "https://cjm118166.github.io/ResellerBooks/screenshots/dashboard.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/insights.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/sales.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/inventory.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/supplies.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/mileage-overview.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/mileage-log-trip.png",
+        "https://cjm118166.github.io/ResellerBooks/screenshots/reports.png"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "ResellerBooks Free",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free tier with sales, expenses, inventory, OCR receipts, iCloud sync, and basic exports. Includes sponsored ad placements."
+        },
+        {
+          "@type": "Offer",
+          "name": "ResellerBooks Pro",
+          "category": "Subscription",
+          "priceCurrency": "USD",
+          "description": "Pro subscription unlocks the full mileage workflow (trip logging, odometer verification, IRS-rate deduction tools) and removes ads. Managed via StoreKit through Apple ID."
+        }
+      ]
     }
     </script>
 
@@ -45,24 +142,31 @@
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "What does ResellerBooks track?",
+        "name": "What does ResellerBooks actually do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ResellerBooks tracks sales, expenses, mileage, receipt photos, and bookkeeping summaries for reseller businesses. It also supports OCR-assisted entry and export tools for audits and tax prep."
+          "text": "ResellerBooks gives resellers a single place to track sales, expenses, mileage, receipt photos, and exports so bookkeeping is easier than maintaining spreadsheets across multiple platforms. It also supports OCR-assisted entry and export tools for audits and tax prep."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which platforms does ResellerBooks support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ResellerBooks is aimed at sellers using eBay, Poshmark, Mercari, Depop, Whatnot, Etsy, Facebook Marketplace, Amazon, Walmart, and similar resale channels."
         }
       }, {
         "@type": "Question",
         "name": "Is my data private?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. ResellerBooks is designed to keep your bookkeeping data on your device and in your private iCloud / CloudKit container when sync is available. The app does not rely on a general-purpose customer data backend."
+          "text": "Yes. ResellerBooks is designed for local storage on your device and private iCloud / CloudKit sync when available. It does not depend on a generic hosted customer database for your bookkeeping records, and your financial data is not sold or shared with third-party data brokers, advertisers, or analytics vendors."
         }
       }, {
         "@type": "Question",
-        "name": "Does the app have ads?",
+        "name": "Does ResellerBooks have ads?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The free experience can include sponsored ad surfaces. ResellerBooks Pro removes ads and expands the export-focused premium workflow."
+          "text": "The free tier may include sponsored placements. ResellerBooks Pro removes all ads and unlocks the full mileage workflow including trip logging, odometer verification, and IRS-rate deduction tools."
         }
       }]
     }
@@ -108,10 +212,41 @@
 
             <div class="hero-panel" aria-label="Product preview">
                 <div class="hero-phone">
-                    <img src="screenshots/dashboard.png" alt="ResellerBooks Dashboard screen showing gross sales, expenses, and operating profit for 2026.">
+                    <img src="screenshots/dashboard.png" width="320" height="693" alt="ResellerBooks Dashboard screen showing gross sales, expenses, and operating profit for 2026." fetchpriority="high">
                 </div>
             </div>
         </header>
+
+        <section class="section" id="privacy-glance" aria-label="Privacy at a glance">
+            <div class="privacy-glance">
+                <div class="privacy-glance-head">
+                    <span class="privacy-eyebrow">Privacy at a glance</span>
+                    <h2>Your bookkeeping data stays yours.</h2>
+                    <p>
+                        ResellerBooks is built so your financial records never sit on a vendor-owned database we control.
+                        Here&rsquo;s what that means in practice &mdash; the full details live in the <a href="legal.html#privacy">Privacy Policy</a>.
+                    </p>
+                </div>
+                <ul class="privacy-grid">
+                    <li>
+                        <strong>On-device storage</strong>
+                        <span>Sales, expenses, mileage, and receipt photos are stored locally on your iPhone.</span>
+                    </li>
+                    <li>
+                        <strong>Private iCloud sync</strong>
+                        <span>When sync is on, data moves through your personal iCloud / CloudKit container, not ours.</span>
+                    </li>
+                    <li>
+                        <strong>No data brokers</strong>
+                        <span>We don&rsquo;t sell, rent, or share your bookkeeping data with advertisers or analytics vendors.</span>
+                    </li>
+                    <li>
+                        <strong>OCR runs on-device</strong>
+                        <span>Receipt and odometer text extraction happens on your phone &mdash; no server upload.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
         <section class="section" id="features">
             <div class="section-header">
@@ -187,7 +322,7 @@
             <div class="gallery-rail" role="list">
                 <figure class="shot" role="listitem">
                     <div class="shot-frame">
-                        <img src="screenshots/dashboard.png" alt="ResellerBooks dashboard showing gross sales, expenses, and operating profit for 2026." loading="lazy">
+                        <img src="screenshots/dashboard.png" width="320" height="693" alt="ResellerBooks dashboard showing gross sales, expenses, and operating profit for 2026." loading="lazy">
                     </div>
                     <figcaption>
                         <strong>Dashboard</strong>
@@ -414,6 +549,9 @@
             </div>
             <div class="micro">
                 © 2026 Mazza Financial Systems LLC. App Store links and product names remain the property of their respective owners.
+            </div>
+            <div class="micro">
+                Made by Mazza Financial Systems LLC &middot; Last updated <time datetime="2026-05-18">May 18, 2026</time>
             </div>
         </footer>
     </div>
