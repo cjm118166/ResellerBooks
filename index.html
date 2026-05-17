@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags for ASO & SEO -->
-    <title>ResellerBooks: Inventory & Tax | The Master Ledger for eBay & Poshmark</title>
-    <meta name="title" content="ResellerBooks: Inventory & Tax | The Master Ledger for eBay & Poshmark">
-    <meta name="description" content="The unified bookkeeping and tax ledger for online resellers. Automatically parse CSVs from eBay, Poshmark, Mercari, and 14 other platforms to track your exact net profit.">
-    <meta name="keywords" content="bookkeeping, ebay, poshmark, reseller, taxes, ledger, profit, inventory, accounting, mercari, cross-listing">
-    
-    <!-- Open Graph / Facebook -->
+    <title>ResellerBooks 1.0.0 | Bookkeeping, Mileage, OCR & iCloud Sync</title>
+    <meta name="title" content="ResellerBooks 1.0.0 | Bookkeeping, Mileage, OCR & iCloud Sync">
+    <meta name="description" content="ResellerBooks is the bookkeeping app for resellers. Track sales, expenses, mileage, and receipts across eBay, Poshmark, Mercari, and more with private iCloud sync, OCR, exports, and a Pro tier that removes ads.">
+    <meta name="keywords" content="ResellerBooks, reseller bookkeeping, mileage tracker, OCR receipts, iCloud sync, eBay, Poshmark, Mercari, Depop, Whatnot, sales tracking, expense tracking">
+    <meta name="robots" content="index,follow">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://resellerbooksus.com/">
-    <meta property="og:title" content="ResellerBooks: Inventory & Tax App">
-    <meta property="og:description" content="Stop fighting spreadsheets. Import your CSVs and instantly see your true profit across all reselling platforms.">
-    <!-- <meta property="og:image" content="LINK_TO_YOUR_APP_PREVIEW_IMAGE"> -->
+    <meta property="og:url" content="https://cjm118166.github.io/ResellerBooks/">
+    <meta property="og:title" content="ResellerBooks 1.0.0 | Bookkeeping for Resellers">
+    <meta property="og:description" content="Track sales, expenses, mileage, receipts, and exports in one private iPhone app built for resellers.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ResellerBooks 1.0.0 | Bookkeeping for Resellers">
+    <meta name="twitter:description" content="Private bookkeeping, mileage logging, OCR receipt capture, and iCloud sync for resellers.">
 
-    <!-- JSON-LD Schema Markup for AI Models (Gemini, ChatGPT, Perplexity) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,7 +23,8 @@
       "name": "ResellerBooks",
       "operatingSystem": "iOS",
       "applicationCategory": "BusinessApplication",
-      "description": "A mobile ledger and bookkeeping app designed specifically for e-commerce resellers on platforms like eBay, Poshmark, and Mercari. It unifies CSV exports into a single tax-ready dashboard.",
+      "softwareVersion": "1.0.0",
+      "description": "A private bookkeeping app for resellers that tracks sales, expenses, mileage, and receipts with OCR, iCloud sync, and export tools.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -34,258 +33,887 @@
     }
     </script>
 
-    <!-- FAQ Schema for AI "Snippet" Snipping -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "How do I track eBay and Poshmark taxes?",
+        "name": "What does ResellerBooks track?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ResellerBooks allows you to import your CSV reports directly from eBay and Poshmark into a master ledger. It automatically calculates gross sales, fees, shipping, and refunds to give you a tax-ready net profit dashboard."
+          "text": "ResellerBooks tracks sales, expenses, mileage, receipt photos, and bookkeeping summaries for reseller businesses. It also supports OCR-assisted entry and export tools for audits and tax prep."
         }
       }, {
         "@type": "Question",
-        "name": "How do I format a master ledger for reselling?",
+        "name": "Is my data private?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A master ledger should include Date, Platform, Order ID, Item Title, Gross Sales, Fees, Shipping, Refunds, and Adjustments. Enter costs as positive numbers and credits as negative numbers. You can download the official ResellerBooks template to start."
+          "text": "Yes. ResellerBooks is designed to keep your bookkeeping data on your device and in your private iCloud / CloudKit container when sync is available. The app does not rely on a general-purpose customer data backend."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does the app have ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The free experience can include sponsored ad surfaces. ResellerBooks Pro removes ads and unlocks the mileage-focused premium experience."
         }
       }]
     }
     </script>
 
     <style>
-        /* Modern, App-Store-esque CSS */
         :root {
-            --primary: #0A84FF; /* iOS Blue */
-            --bg: #F5F5F7; /* Apple gray background */
-            --text-main: #1D1D1F;
-            --text-muted: #86868B;
-            --card-bg: #FFFFFF;
+            --bg: #f6f2ea;
+            --bg-2: #fcfaf6;
+            --card: rgba(255, 255, 255, 0.82);
+            --ink: #151515;
+            --muted: #625d56;
+            --line: rgba(21, 21, 21, 0.10);
+            --accent: #0f766e;
+            --accent-2: #b45309;
+            --accent-3: #1d4ed8;
+            --shadow: 0 24px 60px rgba(17, 24, 39, 0.10);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --max: 1120px;
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 12% 10%, rgba(15, 118, 110, 0.14), transparent 28%),
+                radial-gradient(circle at 88% 14%, rgba(180, 83, 9, 0.12), transparent 22%),
+                radial-gradient(circle at 50% 100%, rgba(29, 78, 216, 0.07), transparent 30%),
+                linear-gradient(180deg, var(--bg-2), var(--bg));
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
-        .container {
-            max-width: 1100px;
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(21, 21, 21, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(21, 21, 21, 0.02) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.62), transparent 88%);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .shell {
+            position: relative;
+            max-width: var(--max);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 22px 20px 64px;
         }
 
-        /* Navbar */
-        nav {
+        .nav {
+            position: sticky;
+            top: 14px;
+            z-index: 20;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-        }
-        nav .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 0 60px;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            gap: 16px;
+            margin-bottom: 18px;
+            padding: 12px 16px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
         }
 
-        /* Buttons */
-        .btn-group {
+        .brand {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        .btn:hover {
-            transform: scale(0.98);
-            opacity: 0.9;
-        }
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px rgba(10, 132, 255, 0.3);
-        }
-        .btn-secondary {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid #D2D2D7;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
-        /* Features Grid */
-        .features {
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 11px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px 0;
-        }
-        .feature-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-        }
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            place-items: center;
+            color: white;
+            background: linear-gradient(135deg, var(--accent), #115e59);
+            box-shadow: 0 10px 24px rgba(15, 118, 110, 0.28);
         }
 
-        /* FAQ Section */
-        .faq-section {
-            padding: 60px 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-        .faq-item {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-        .faq-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .faq-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid #E5E5EA;
-            margin-top: 40px;
+        .nav-links a {
+            padding: 9px 14px;
+            border-radius: 999px;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 700;
         }
-        footer a {
-            color: var(--text-muted);
+
+        .nav-links a:hover {
+            background: rgba(15, 118, 110, 0.08);
             text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            color: var(--primary);
         }
 
-        /* Mobile Adjustments */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            align-items: center;
+            padding: 34px 0 24px;
+        }
+
+        .hero-copy {
+            padding: 18px 4px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(15, 118, 110, 0.18);
+            background: rgba(15, 118, 110, 0.06);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 11ch;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.07em;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            color: white;
+            background: linear-gradient(135deg, var(--accent), #115e59);
+            box-shadow: 0 14px 30px rgba(15, 118, 110, 0.24);
+        }
+
+        .btn-secondary {
+            color: var(--ink);
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .stat {
+            padding: 16px;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid var(--line);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .hero-panel {
+            position: relative;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68));
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .hero-panel::before {
+            content: "";
+            position: absolute;
+            inset: auto -20% -35% auto;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 118, 110, 0.18), transparent 68%);
+            filter: blur(12px);
+        }
+
+        .mock-window {
+            position: relative;
+            display: grid;
+            gap: 14px;
+            padding: 18px;
+            border-radius: 24px;
+            border: 1px solid rgba(21, 21, 21, 0.08);
+            background: rgba(252, 250, 246, 0.90);
+        }
+
+        .mock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(21, 21, 21, 0.16);
+        }
+
+        .mock-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--muted);
+        }
+
+        .ledger-card {
+            padding: 18px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(180, 83, 9, 0.08));
+            border: 1px solid rgba(21, 21, 21, 0.08);
+        }
+
+        .ledger-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+            font-size: 0.95rem;
+        }
+
+        .ledger-row:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .ledger-row:first-child {
+            padding-top: 0;
+        }
+
+        .ledger-row strong {
+            display: block;
+            font-size: 0.96rem;
+        }
+
+        .ledger-row span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .summary-box {
+            padding: 14px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(21, 21, 21, 0.08);
+        }
+
+        .summary-box b {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        .summary-box small {
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .section {
+            margin-top: 24px;
+            padding: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 18px;
+            margin: 34px 0 14px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            letter-spacing: -0.05em;
+        }
+
+        .section-header p {
+            max-width: 620px;
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            grid-column: span 12;
+            padding: 22px;
+            border-radius: var(--radius-lg);
+            background: var(--card);
+            border: 1px solid var(--line);
+            box-shadow: 0 10px 28px rgba(17, 24, 39, 0.05);
+        }
+
+        .feature-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.12rem;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.97rem;
+        }
+
+        .feature-chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .chip {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(15, 118, 110, 0.08);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .trust-band {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .trust-card {
+            padding: 22px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.80);
+            border: 1px solid var(--line);
+        }
+
+        .trust-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+        }
+
+        .trust-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .faq-section {
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            padding: 22px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid var(--line);
+        }
+
+        .faq-item h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .footer {
+            margin-top: 34px;
+            padding: 24px 0 0;
+            border-top: 1px solid rgba(21, 21, 21, 0.08);
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .micro {
+            margin-top: 12px;
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-copy,
+        .hero-panel,
+        .feature-card,
+        .trust-card,
+        .faq-item {
+            animation: rise 420ms ease-out both;
+        }
+
+        .hero-panel {
+            animation-delay: 60ms;
+        }
+
+        .feature-card:nth-child(2) { animation-delay: 70ms; }
+        .feature-card:nth-child(3) { animation-delay: 120ms; }
+        .feature-card:nth-child(4) { animation-delay: 170ms; }
+        .trust-card:nth-child(2) { animation-delay: 70ms; }
+        .faq-item:nth-child(2) { animation-delay: 70ms; }
+        .faq-item:nth-child(3) { animation-delay: 120ms; }
+
+        @media (min-width: 820px) {
+            .hero {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 34px;
+                padding-top: 44px;
+            }
+
+            .feature-card {
+                grid-column: span 4;
+            }
+
+            .feature-card.feature-wide {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .nav {
+                border-radius: 24px;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+            }
+
+            .stats,
+            .summary-grid,
+            .trust-band {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5rem; }
-            .btn-group { flex-direction: column; }
-            .btn { width: 100%; text-align: center; }
+            .shell {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            h1 {
+                max-width: none;
+            }
+
+            .cta-row {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .hero-copy,
+            .hero-panel,
+            .feature-card,
+            .trust-card,
+            .faq-item {
+                animation: none;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <nav>
-            <div class="logo">ResellerBooks</div>
-            <a href="YOUR_APP_STORE_LINK" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Get the App</a>
+    <div class="shell">
+        <nav class="nav" aria-label="Primary">
+            <div class="brand">
+                <div class="brand-mark">R</div>
+                <div>
+                    <div>ResellerBooks</div>
+                    <div style="font-size: 12px; color: var(--muted); font-weight: 700;">Version 1.0.0 • Build 6</div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#trust">Trust</a>
+                <a href="#faq">FAQ</a>
+                <a href="#legal">Legal</a>
+            </div>
         </nav>
 
         <header class="hero">
-            <h1>The Unified Ledger for eBay & Poshmark.</h1>
-            <p>Stop fighting complex spreadsheets. Import your CSVs, track your exact net profit, and make tax season effortless with our secure, on-device iOS app.</p>
-            
-            <div class="btn-group">
-                <a href="YOUR_APP_STORE_LINK" class="btn btn-primary">Download on the App Store</a>
-                <!-- The Google Sheets Template Preview Trick -->
-                <a href="https://docs.google.com/spreadsheets/d/1Oz82CI0_JagVf1d1bA9WV7fCzj2hTp8o40_k5_NMqx8/template/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get the Free Master Template</a>
+            <div class="hero-copy">
+                <div class="eyebrow">Built for resellers</div>
+                <h1>Your books, mileage, and receipts in one app.</h1>
+                <p>
+                    ResellerBooks is a private bookkeeping app for eBay, Poshmark, Mercari, Depop, Whatnot, Etsy,
+                    Facebook Marketplace, Amazon, Walmart, and other reselling workflows. Track sales, expenses,
+                    mileage, OCR receipt data, and exports without wrestling spreadsheets.
+                </p>
+
+                <div class="cta-row">
+                    <a href="YOUR_APP_STORE_LINK" class="btn btn-primary">Download on the App Store</a>
+                    <a href="legal.html#privacy" class="btn btn-secondary">Read Privacy & Terms</a>
+                </div>
+
+                <div class="stats" aria-label="App highlights">
+                    <div class="stat">
+                        <strong>Private by design</strong>
+                        <span>Data stays on-device and in your private iCloud container when sync is available.</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Pro removes ads</strong>
+                        <span>Free users may see sponsored surfaces; Pro unlocks an ad-free experience.</span>
+                    </div>
+                    <div class="stat">
+                        <strong>OCR-assisted entry</strong>
+                        <span>Capture receipt details and odometer readings faster with on-device OCR.</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Version 1.0.0</strong>
+                        <span>Current App Store build line: 1.0.0, build 6.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-panel" aria-label="Product preview">
+                <div class="mock-window">
+                    <div class="mock-header">
+                        <div class="window-dots" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mock-title">Dashboard snapshot</div>
+                    </div>
+
+                    <div class="ledger-card">
+                        <div class="ledger-row">
+                            <div>
+                                <strong>Sales</strong>
+                                <span>Track by marketplace and month</span>
+                            </div>
+                            <div><strong>$14,820</strong></div>
+                        </div>
+                        <div class="ledger-row">
+                            <div>
+                                <strong>Expenses</strong>
+                                <span>Inventory, supplies, software, misc.</span>
+                            </div>
+                            <div><strong>$3,144</strong></div>
+                        </div>
+                        <div class="ledger-row">
+                            <div>
+                                <strong>Mileage</strong>
+                                <span>Trips, deductions, and odometer support</span>
+                            </div>
+                            <div><strong>1,286 mi</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="summary-grid">
+                        <div class="summary-box">
+                            <b>OCR receipts</b>
+                            <small>Reduce manual entry with on-device text extraction.</small>
+                        </div>
+                        <div class="summary-box">
+                            <b>Export ready</b>
+                            <small>Generate audit and bookkeeping exports for tax prep.</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>Universal CSV Parser</h3>
-                <p>Support for 14+ reselling platforms. We intelligently map your gross sales, fees, and shipping costs into one unified format without manual data entry.</p>
+        <section class="section" id="features">
+            <div class="section-header">
+                <div>
+                    <h2>Everything a reseller actually needs</h2>
+                    <p>
+                        The app is built around the tasks that matter daily: logging sales, categorizing expenses,
+                        capturing receipts, tracking mileage, and keeping your records synced and exportable.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Bulletproof Math</h3>
-                <p>No more silent accounting errors. Our strict sign convention logic ensures that fee credits and refunds are calculated flawlessly to show your true net profit.</p>
-            </div>
-            <div class="feature-card">
-                <h3>100% Private & On-Device</h3>
-                <p>Your financial data never touches our servers. ResellerBooks utilizes on-device CoreData and syncs securely via your personal Apple iCloud.</p>
+
+            <div class="feature-grid">
+                <article class="feature-card feature-wide">
+                    <h3>Sales, expenses, and profit tracking</h3>
+                    <p>
+                        Keep your marketplace activity organized in one ledger. ResellerBooks is designed for ongoing
+                        bookkeeping, not just one-time imports, so you can understand what you earned and what it cost.
+                    </p>
+                    <div class="feature-chip-row">
+                        <span class="chip">Sales</span>
+                        <span class="chip">Expenses</span>
+                        <span class="chip">Net profit</span>
+                        <span class="chip">Marketplace categories</span>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Mileage tools that are built in</h3>
+                    <p>
+                        Log trips, verify odometer readings, and keep mileage deduction data ready for tax season.
+                        The Pro tier centers on this workflow and removes ads from the app.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>OCR receipt capture</h3>
+                    <p>
+                        Use the camera or photo library to pull text from receipts and reduce repetitive typing.
+                        OCR happens on-device for speed and privacy.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Private iCloud sync</h3>
+                    <p>
+                        Your records can sync through iCloud / CloudKit across devices signed into your Apple account,
+                        with local-only fallback when iCloud is unavailable.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Exports for tax prep and audit trails</h3>
+                    <p>
+                        Build export packages from the app so you can share bookkeeping summaries, audit data, or CSV
+                        records with a CPA or keep them for your own records.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Sponsored ads in free usage</h3>
+                    <p>
+                        The app includes ad-supported surfaces in the free experience and allows Pro to remove ads
+                        and ad-related presentation.
+                    </p>
+                </article>
             </div>
         </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h4>How do I track eBay and Poshmark taxes?</h4>
-                <p>ResellerBooks allows you to import your CSV reports directly from eBay and Poshmark into a master ledger. It automatically calculates gross sales, fees, shipping, and refunds to give you a tax-ready net profit dashboard.</p>
+        <section class="section" id="trust">
+            <div class="section-header">
+                <div>
+                    <h2>Why people can trust it</h2>
+                    <p>
+                        The page should answer the two questions buyers ask first: is it useful, and is it safe to rely on?
+                        ResellerBooks is built around privacy, transparency, and practical bookkeeping outcomes.
+                    </p>
+                </div>
             </div>
 
-            <div class="faq-item">
-                <h4>How do I format a master ledger for reselling?</h4>
-                <p>A master ledger should include Date, Platform, Order ID, Item Title, Gross Sales, Fees, Shipping, Refunds, and Adjustments. Enter costs as positive numbers and credits as negative numbers. You can download our official Google Sheets template above to get started instantly.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Can I export my data for my CPA?</h4>
-                <p>Yes. You can generate a comprehensive PDF Report or export your entire database as an Audit Zip file directly from the app.</p>
+            <div class="trust-band">
+                <article class="trust-card">
+                    <h3>Data control</h3>
+                    <p>Records are designed to stay on your device and in your private Apple storage, not in a general-purpose vendor backend.</p>
+                </article>
+                <article class="trust-card">
+                    <h3>Honest subscription model</h3>
+                    <p>Pro is a straightforward StoreKit subscription with Apple-managed billing, renewals, and cancellations.</p>
+                </article>
+                <article class="trust-card">
+                    <h3>Clear feature boundaries</h3>
+                    <p>OCR helps with entry, but you still control the source data. Mileage and exports are tools, not a tax filing substitute.</p>
+                </article>
+                <article class="trust-card">
+                    <h3>External links are explicit</h3>
+                    <p>The Toolkit contains outbound links to third-party tools and products so users know when they are leaving the app.</p>
+                </article>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 ResellerBooks LLC. All rights reserved.</p>
-            <div style="margin-top: 10px;">
-                <a href="legal.html#privacy">Privacy Policy</a> |
-<a href="legal.html#terms">Terms of Service</a> |
-<a href="legal.html#support">Contact Support</a>
+        <section class="section" id="faq">
+            <div class="section-header">
+                <div>
+                    <h2>Frequently asked questions</h2>
+                    <p>Short answers that make the product easier to understand before someone downloads it.</p>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <article class="faq-item">
+                    <h3>What does ResellerBooks actually do?</h3>
+                    <p>
+                        It gives resellers a single place to track sales, expenses, mileage, receipt photos, and exports so
+                        bookkeeping is easier than maintaining spreadsheets across multiple platforms.
+                    </p>
+                </article>
+                <article class="faq-item">
+                    <h3>Which platforms does it support?</h3>
+                    <p>
+                        The app is aimed at sellers using eBay, Poshmark, Mercari, Depop, Whatnot, Etsy, Facebook Marketplace,
+                        Amazon, Walmart, and similar resale channels.
+                    </p>
+                </article>
+                <article class="faq-item">
+                    <h3>Is my data private?</h3>
+                    <p>
+                        Yes. The app is designed for local storage and private iCloud / CloudKit sync when available.
+                        It does not depend on a generic hosted customer database for your bookkeeping records.
+                    </p>
+                </article>
+                <article class="faq-item">
+                    <h3>What about ads?</h3>
+                    <p>
+                        Free usage may include sponsored placements. ResellerBooks Pro removes ads and centers the experience
+                        on the mileage and bookkeeping workflow.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="footer" id="legal">
+            <div class="footer-row">
+                <div>
+                    <strong>ResellerBooks</strong>
+                    <div class="micro">Version 1.0.0 • Build 6 • Designed for practical reseller bookkeeping</div>
+                </div>
+                <div class="footer-links">
+                    <a href="legal.html#privacy">Privacy Policy</a>
+                    <a href="legal.html#terms">Terms</a>
+                    <a href="legal.html#support">Support</a>
+                </div>
+            </div>
+            <div class="micro">
+                © 2026 Mazza Financial Systems LLC. App Store links and product names remain the property of their respective owners.
             </div>
         </footer>
     </div>
-
 </body>
 </html>
